@@ -1,10 +1,22 @@
 package bean;
 
+import java.util.Set;
+
 public class Product {
     private int id;
     private String name;
     private float price;
     private Category category;
+
+    private Set<User> users;
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 
     public Product() {
     }

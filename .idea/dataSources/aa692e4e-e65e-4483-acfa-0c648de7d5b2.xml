@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="temp@localhost">
+<dataSource name="hibernate.cfg.xml/Hibernate">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
     <root id="1">
       <ServerVersion>5.7.23</ServerVersion>
@@ -942,186 +942,90 @@
     <table id="238" parent="14" name="category_"/>
     <table id="239" parent="14" name="country"/>
     <table id="240" parent="14" name="product_"/>
-    <table id="241" parent="14" name="product__users"/>
-    <table id="242" parent="14" name="user"/>
-    <table id="243" parent="14" name="user_"/>
-    <table id="244" parent="14" name="user__products"/>
-    <column id="245" parent="238" name="id">
+    <table id="241" parent="14" name="user"/>
+    <column id="242" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="238" name="name">
+    <column id="243" parent="238" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="247" parent="238" name="PRIMARY">
+    <key id="244" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="248" parent="239" name="c_id">
+    <column id="245" parent="239" name="c_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="239" name="c_name">
+    <column id="246" parent="239" name="c_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="239" name="c_capital">
+    <column id="247" parent="239" name="c_capital">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="240" name="id">
+    <column id="248" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="240" name="name">
+    <column id="249" parent="240" name="name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="240" name="price">
+    <column id="250" parent="240" name="price">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="240" name="cid">
+    <column id="251" parent="240" name="cid">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="255" parent="240" name="FKC42BD150649FA65A">
+    <index id="252" parent="240" name="FKC42BD150649FA65A">
       <ColNames>cid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="256" parent="240" name="PRIMARY">
+    <key id="253" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="257" parent="240" name="FKC42BD150649FA65A">
+    <foreign-key id="254" parent="240" name="FKC42BD150649FA65A">
       <ColNames>cid</ColNames>
       <RefSchemaName>temp</RefSchemaName>
       <RefTableName>category_</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="258" parent="241" name="pid">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="259" parent="241" name="uid">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="260" parent="241" name="FKDF008659F0B58A1C">
-      <ColNames>pid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="261" parent="241" name="FKDF00865987AD17B9">
-      <ColNames>uid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="262" parent="241" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>pid
-uid</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="263" parent="241" name="FKDF008659F0B58A1C">
-      <ColNames>pid</ColNames>
-      <RefSchemaName>temp</RefSchemaName>
-      <RefTableName>product_</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="264" parent="241" name="FKDF00865987AD17B9">
-      <ColNames>uid</ColNames>
-      <RefSchemaName>temp</RefSchemaName>
-      <RefTableName>user_</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="265" parent="242" name="id">
+    <column id="255" parent="241" name="id">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="242" name="username">
+    <column id="256" parent="241" name="username">
       <Position>2</Position>
       <DataType>varchar(16)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="242" name="password">
+    <column id="257" parent="241" name="password">
       <Position>3</Position>
       <DataType>varchar(16)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="243" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="269" parent="243" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="270" parent="243" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="271" parent="244" name="uid">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="272" parent="244" name="pid">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="273" parent="244" name="FK26F8E74F87AD17B9">
-      <ColNames>uid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="274" parent="244" name="FK26F8E74FF0B58A1C">
-      <ColNames>pid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="275" parent="244" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>uid
-pid</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="276" parent="244" name="FK26F8E74F87AD17B9">
-      <ColNames>uid</ColNames>
-      <RefSchemaName>temp</RefSchemaName>
-      <RefTableName>user_</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="277" parent="244" name="FK26F8E74FF0B58A1C">
-      <ColNames>pid</ColNames>
-      <RefSchemaName>temp</RefSchemaName>
-      <RefTableName>product_</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>

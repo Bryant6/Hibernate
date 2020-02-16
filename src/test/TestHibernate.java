@@ -2,6 +2,7 @@ package test;
 
 import bean.Category;
 import bean.Product;
+import bean.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -143,6 +144,47 @@ public class TestHibernate {
         Product product = (Product) session.get(Product.class,8);
         product.setCategory(category);
         session.update(product);
+
+        session.getTransaction().commit();
+        session.close();
+        sf.close();
+    }
+
+    @Test
+    public void oneToMany(){
+        SessionFactory sf = new Configuration().configure().buildSessionFactory();
+        Session session = sf.openSession();
+        session.beginTransaction();
+
+        Category category = (Category) session.get(Category.class,3);
+        Set<Product> ps = category.getProducts();
+        for(Product p :ps){
+            System.out.println(p.getName());
+        }
+
+        session.getTransaction().commit();
+        session.close();
+        sf.close();
+    }
+
+    @Test
+    public void manyToMany(){
+        SessionFactory sf = new Configuration().configure().buildSessionFactory();
+        Session session = sf.openSession();
+        session.beginTransaction();
+
+        Set<User> users = new HashSet();
+        for(int i=0;i<3;i++){
+            User u = new User();
+            u.setName("user" + i);
+            users.add(u);
+            session.save(u);
+        }
+
+        Product p1 = (Product) session.get(Product.class,1);
+        p1.setUsers(users);
+        session.save(p1);
+
 
         session.getTransaction().commit();
         session.close();

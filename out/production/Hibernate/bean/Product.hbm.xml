@@ -11,6 +11,11 @@
         <property name="name"/>
         <property name="price"/>
         <many-to-one name="category" class="Category" column="cid"/>
+
+        <set name="users">
+            <key column="pid"></key>
+            <many-to-many class="User" column="uid"/>
+        </set>
     </class>
 
 </hibernate-mapping>
